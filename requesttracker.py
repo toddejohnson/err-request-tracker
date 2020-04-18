@@ -14,7 +14,7 @@ class RT(BotPlugin):
     """Request Tracker plugin for Err"""
 
     tracker = None
-    re_find_ticket = r'(^| |(https?\:\/\/.+=))(\d{1,})( |\?|\.|,|:|\!|$)'
+    re_find_ticket = r'(^|\s+|[#.,;:!?]|(https?\:\/\/.*?=))(\d{1,})(?=(\s+|$|[.,;:!?]))'
 
     def get_configuration_template(self):
         return CONFIG_TEMPLATE
